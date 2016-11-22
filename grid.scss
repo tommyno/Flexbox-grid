@@ -1,0 +1,52 @@
+// ------------------------------------
+// Minimalistic flexbox grid
+// ------------------------------------
+
+// Main
+.row {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  // Variation -- Gutter
+  &--padded {
+    $gutter: 32px;
+    margin-left: -#{$gutter};
+    > [class^='col'] {
+      padding-left: $gutter;
+    }
+  }  
+
+}
+
+// Flexible col
+.col {
+  float: left; // Fallback for IE9
+  flex: 1 1 auto; // Automatic grow and shrink to content
+
+  // Percentage fixed cols
+  &--75 {
+    float: left;
+    flex: 0 0 auto;
+    width: 75%;
+  }
+
+  &--50 {
+    float: left;
+    flex: 0 0 auto;
+    width: 50%;
+  }
+
+  &--33 {
+    float: left;
+    flex: 0 0 auto;
+    width: 33.3333%;
+  }
+
+  &--25 {
+    float: left;
+    flex: 0 0 auto;
+    width: 25%;
+  }
+
+}
